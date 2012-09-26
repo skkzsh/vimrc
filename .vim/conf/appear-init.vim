@@ -126,4 +126,3 @@ augroup END
     " autocmd BufEnter,VimEnter,WinEnter * match TrailingSpace /\s\+$/
 
 " augroup END
-
