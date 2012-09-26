@@ -47,6 +47,11 @@ map <Leader><C-i> <Plug>(poslist-next-buf)
 noremap ,t :Tlist<CR>
 
 "---------------------------------------------------------------------------
+"""" quickrun
+let g:quickrun_config = {}
+"" browser optionはopen-browser.vimに依存
+
+"---------------------------------------------------------------------------
 """" Vim Doc ja
 " helptags $DOT_VIM/bundle/vimdoc-ja/doc
 " set helplang=ja,en
