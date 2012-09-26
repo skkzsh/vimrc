@@ -1,8 +1,13 @@
 "---------------------------------------------------------------------------
 "" Encode
 set encoding=utf-8
+" set fileencoding=
 set fileencodings=iso-2022-jp-3,iso-2022-jp,euc-jisx0213,euc-jp,utf-8,ucs-bom,euc-jp,eucjp-ms,cp932,sjis
-"set fileencodings=iso-2022-jp,utf-8,ucs-bom,iso-2022-jp-3,eucjp-ms,euc-jisx0213,euc-jp,cp932,sjis
+
+"" 改行Code
+" set fileformat=unix
+" set fileformats=unix,dos,mac
+
 
 "---------------------------------------------------------------------------
 ""SCIMでVi協調モード
