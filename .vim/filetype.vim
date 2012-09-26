@@ -1,7 +1,9 @@
-" if exists("did_load_filetypes")
-" 	finish
-" endif
+if exists("did_load_filetypes")
+    finish
+endif
 
-" augroup filetypedetect
-" 	autocmd! BufRead,BufNewFile *.gp setfiletype gnuplot
-" augroup END
+augroup filetypedetect
+    autocmd!
+    autocmd BufRead,BufNewFile *.mdt,*.mdwn,*.mark setfiletype markdown
+    " autocmd BufRead,BufNewFile *.diag setfiletype blockdiag
+augroup END
