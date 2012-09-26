@@ -104,6 +104,8 @@ augroup templates
     autocmd BufNewFile *.py 0r ~/.auto-insert/template.py
     " autocmd BufNewFile *.tex 0r ~/.auto-insert/template.tex
     autocmd BufNewFile *.org 0r ~/.auto-insert/template.org
+    autocmd BufNewFile *.md,*.mkd,*.mdt,*.mkdn,*.mdwn,*.mark,*.mdown,*.markdown 0r ~/.auto-insert/template.md
+    autocmd BufNewFile *.bat 0r ~/.auto-insert/template.bat
 augroup END
 
 "---------------------------------------------------------------------------
