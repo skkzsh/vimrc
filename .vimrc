@@ -1,7 +1,5 @@
-""" Memo
-"" 最後に定義された場所のCheck - verbose set HOGE?
-
 """ ~/.vimの位置
+""" See s:dotvim in autoload/getscript.vim
 if has('win32')
     let $DOT_VIM = expand('$VIM/vimfiles')
 else
@@ -40,3 +38,6 @@ source $VIM_CONF/test-init.vim
 "         source $VIM_LOCAL/local-init.vim
 "     endif
 " endif
+
+""" Memo
+"" 最後に定義された場所のCheck - verbose set HOGE?
