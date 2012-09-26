@@ -20,6 +20,7 @@ Bundle 'tsukkee/unite-help'
 Bundle 'h1mesuke/unite-outline'
 Bundle 'tsukkee/unite-tag'
 " Bundle 'soh335/unite-qflist'
+" Bundle 'mattn/unite-gist'
 
 "" neocomplcache
 Bundle 'Shougo/neocomplcache'
@@ -40,6 +41,13 @@ Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-localrc'
 " Bundle 'thinca/vim-guicolorscheme'
 
+"" mattn
+Bundle 'mattn/webapi-vim'
+" Bundle 'mattn/mkdpreview-vim'
+if executable('git')
+    Bundle 'mattn/gist-vim'
+endif
+
 "" tpope
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
@@ -53,22 +61,24 @@ Bundle 'fuenor/vim-statusline'
 "" -- plugin directroyを作成して
 "" -- insert-statusline.vimをその中に入れる必要がある
 Bundle 'taku-o/vim-batch-source'
+Bundle 'tyru/open-browser.vim'
+Bundle 'PProvost/vim-ps1'
+" Bundle 'wannesm/wmgraphviz.vim'
+" Bundle 'vim-pandoc/vim-pandoc'
 
 if executable('w3m')
     Bundle 'yuratomo/w3m.vim'
-endif
-if executable('git')
-    Bundle 'mattn/gist-vim'
-    Bundle 'mattn/webapi-vim'
 endif
 if executable('ctags')
     Bundle 'taglist.vim'
 endif
 
+" Bundle 'kien/ctrlp'
 " Bundle 'nvie/vim-flakes8'
 " Bundle 'kevinw/pyflakes-vim'
 " Bundle 'c9s/perlomni'
 " Bundle 'c9s/cpan'
+" perlbrew
 " textobj
 
 Bundle 'YankRing.vim'
@@ -78,6 +88,7 @@ Bundle 'errormarker.vim'
 Bundle 'python_fold'
 Bundle 'sh.vim'
 " Bundle 'Super-Shell-Indent'
+" Bundle 'css_color.vim'
 " Bundle 'c.vim'
 " Bundle 'clang'
 " Bundle 'clang_complete'
