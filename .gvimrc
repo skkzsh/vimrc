@@ -92,8 +92,8 @@ endif
 " highlight Error gui=NONE guifg=Yellow guibg=Red
 
 "" CursorLine
-set cursorline
-highlight CursorLine gui=underline guifg=NONE guibg=NONE
+" set cursorline
+" highlight CursorLine gui=underline guifg=NONE guibg=NONE
 
 "" CursorColumn
 " set cursorcolumn
