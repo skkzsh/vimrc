@@ -6,25 +6,58 @@ if 1 && (!exists('g:no_gvimrc_example') || g:no_gvimrc_example == 0)
 endif
 
 "---------------------------------------------------------------------------
-"""" フォント設定:
+"""" Fonts
 
 if has('win32')
-    " Windows用
+    " Meiryo, MeiryoKe_Console
+    " Consolas, Inconsolata, Monaco
+
     " set guifont=MS_Gothic:h12:cSHIFTJIS
-    " set guifont=MS_Gothic:h11:cSHIFTJIS
-    " set guifont=MS_Mincho:h12:cSHIFTJIS
     " set guifont=Meiryo:h11:cSHIFTJIS
+    " set guifont=Meiryoke_Console:h11:cSHIFTJIS
+    " set guifont=Migu_1M:h11:cSHIFTJIS
     " set guifont=Consolas:h11:cSHIFTJIS
+
     " set guifont=Consolas:h11 guifontwide=MS_Gothic:h10
-    " set guifont=Consolas:h11 guifontwide=Meiryo:h10
-    set guifont=Consolas:h11 guifontwide=Consolas:h11
+    " set guifont=Consolas:h11 guifontwide=Meiryoke_Console:h11
+    " set guifont=Inconsolata:h11 guifontwide=MeiryoKe_Console:h11
+    " set guifont=Monaco:h9 guifontwide=MeiryoKe_Console:h11
+
+    " scriptencoding utf-8
+
+    " Osakaー等幅 には英語名が無い
+    " scriptencoding cp932
+    " scriptencoding sjis
+    " scriptencoding utf-8
+    " set guifont=Osaka－等幅:h12:cSHIFTJIS
+    " set guifont=Osaka－等幅:h11
+    " のSJIS
+    " let &guifont='Osaka' . "\x81\x7c\x93\x99\x95\x9d" . ':h11:cSHIFTJIS'
+
+    if hostname() =~ 'ZENBOOK'
+        set guifont=Monaco:h9 guifontwide=MeiryoKe_Console:h11
+    else
+        " set guifont=MS_Gothic:h12:cSHIFTJIS
+    endif
 
     """ 行間隔の設定
     set linespace=1
 
 elseif has('mac')
+    " Hiragino Gothic, Osaka, Migu, Yasashisa
+    " Monaco, Menlo, Inconsolata
+
     " set guifont=Osaka－等幅:h14
-    set guifont=Osaka-Mono:h16
+    " set guifont=Osaka-Mono:h16
+
+    " set guifont=Menlo:h14
+    " set guifont=Menlo:h15 guifontwide=Migu_1M:h15
+    set guifont=Osaka-Mono:h16 guifontwide=Ricty:h16
+    " set guifont=Osaka-Mono:h16 guifontwide=Migu_1M:h16
+    " set guifont=Osaka-Mono:h16 guifontwide=Rounded_M+_1m:h16
+    " set guifont=Ricty:h16
+    " set guifont=Monaco:h14 guifontwide=Hiragino_Maru_Gothic_Pro:h14
+    " set guifont=Menlo:h14 guifontwide=07YasashisaGothic:h14
 
 elseif has('xfontset')
     " UNIX用 (xfontsetを使用)
@@ -43,22 +76,21 @@ set lines=40
 set cmdheight=2
 
 "---------------------------------------------------------------------------
-""" カラースキーム・透明度
+""" Color Scheme, 透明度
 if has('gui_macvim')
 
     "" 不透明 0 ～ 透明 100
     set transparency=10
     " set antialias
 
-    " colorscheme BlackSea
+    colorscheme xoria256
     " colorscheme macvim
 
 
 elseif has('unix')
 
-    colorscheme BlackSea
-    " colorscheme zellner
-    " colorscheme morning
+    " colorscheme ChocolatePapaya
+    colorscheme xoria256
 
 elseif has('win32')
 
@@ -66,15 +98,15 @@ elseif has('win32')
     gui
     set transparency=230
 
-    colorscheme BlackSea
+    " colorscheme ChocolatePapaya
+    colorscheme xoria256
+    " colorscheme candy
+    " colorscheme BlackSea
     " colorscheme zellner
     " colorscheme morning
 
 endif
 
-
-"" StatusLine_Insert
-let hi_insert = 'hi StatusLine gui=NONE guifg=Black guibg=DimGray'
 
 "" Cursor
 " highlight Cursor gui=NONE guifg=NONE guibg=Yellow
@@ -108,9 +140,11 @@ if colors_name == 'macvim'
     highlight TabString gui=NONE guifg=NONE guibg=Snow3
 elseif colors_name == 'BlackSea'
     highlight TabString gui=NONE guifg=NONE guibg=Gray10
+elseif colors_name == 'xoria256'
+    highlight TabString gui=NONE guifg=NONE guibg=Gray25
 endif
 "" 行末Space
-highlight TrailingSpace gui=NONE guifg=NONE guibg=DeepPink
+highlight TrailingSpace gui=NONE guifg=NONE guibg=LightPink
 
 "---------------------------------------------------------------------------
 " 行番号を表示
@@ -200,4 +234,8 @@ endif
 """ Cursorの点滅
 set guicursor=a:blinkwait2000-blinkoff500-blinkon500
 "" Default
-" set guicursor=a:blinkwait175-blinkoff150-blinkon175 
+" set guicursor=a:blinkwait175-blinkoff150-blinkon175
+
+"---------------------------------------------------------------------------
+"" Bundle
+NeoBundleSource vim-css-color
