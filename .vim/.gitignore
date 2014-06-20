@@ -1,3 +1,5 @@
 bundle/*
-!bundle/vundle
+# !bundle/vundle
+local
+!bundle/neobundle.vim
 !bundle/.gitkeep
