@@ -1,3 +1,5 @@
+"" Japanese Settings
+
 "---------------------------------------------------------------------------
 "" Encode
 set encoding=utf-8
@@ -5,9 +7,9 @@ set encoding=utf-8
 set fileencodings=iso-2022-jp-3,iso-2022-jp,euc-jisx0213,euc-jp,utf-8,ucs-bom,euc-jp,eucjp-ms,cp932,sjis
 
 "" 改行Code
-" set fileformat=unix
-" set fileformats=unix,dos,mac
-
+"" TODO
+set fileformat=unix
+set fileformats=unix,dos,mac
 
 "---------------------------------------------------------------------------
 ""SCIMでVi協調モード

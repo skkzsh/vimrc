@@ -25,15 +25,15 @@ let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
 
 "" Viewer
 if has('mac')
-    let g:Tex_ViewRule_dvi = 'open -a Mxdvi'
-    let g:Tex_ViewRule_pdf = 'xpdf'
-    "let g:Tex_ViewRule_pdf = 'open -a Preview'
+  let g:Tex_ViewRule_dvi = 'open -a Mxdvi'
+  let g:Tex_ViewRule_pdf = 'xpdf'
+  "let g:Tex_ViewRule_pdf = 'open -a Preview'
 elseif has('unix')
-    let g:Tex_ViewRule_dvi = 'xdvi'
-    let g:Tex_ViewRule_pdf = 'apvlv'
+  let g:Tex_ViewRule_dvi = 'xdvi'
+  let g:Tex_ViewRule_pdf = 'apvlv'
 elseif has('win32')
-    let g:Tex_ViewRule_dvi = 'dviout'
-    let g:Tex_ViewRule_pdf = 'AcroRd32'
+  let g:Tex_ViewRule_dvi = 'dviout'
+  let g:Tex_ViewRule_pdf = 'AcroRd32'
 endif
 
 "" 自動折りたたみを無効

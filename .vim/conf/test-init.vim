@@ -1,3 +1,6 @@
+"" Test
+
+"---------------------------------------------------------------------------
 " syn keyword ps1CommentTodo HOGE FUGA contained
 " syn match MyComment /#.*/ contains=MyTodo
 " syn region MyComment start="<#" end="#>" contains=MyTodo
@@ -21,4 +24,5 @@
 " highlight default link myMemo Todo
 
 
+"---------------------------------------------------------------------------
 " au BufReadCmd   *.epub      call zip#Browse(expand("<amatch>"))

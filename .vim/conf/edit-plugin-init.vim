@@ -1,8 +1,10 @@
+"" Edit Settings by Plugins
+
 "---------------------------------------------------------------------------
 " TComment
-if !(has('mac'))
-    let g:tcommentMapLeader1 = '<C-\>'
-endif
+" if !(has('mac'))
+"     let g:tcommentMapLeader1 = '<C-\>'
+" endif
 
 "---------------------------------------------------------------------------
 " Kill Ring
