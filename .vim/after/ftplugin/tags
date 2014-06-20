@@ -1,0 +1,52 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+,ht	html.vim	/^    nnoremap ,ht <Esc>:silent !tidy -iqm -raw %<CR>:e! %<CR>:redraw!<CR>$/;"	m
+,ht	html.vim	/^    nnoremap ,ht <Esc>:silent !tidy -iqm -raw -xml %<CR>:e! %<CR>:redraw!<CR>$/;"	m
+,ht	html.vim	/^    nnoremap ,ht <Esc>:silent !tidyp -iqm -raw %<CR>:e! %<CR>:redraw!<CR>$/;"	m
+,ht	html.vim	/^    nnoremap ,ht <Esc>:silent !tidyp -iqm -raw -xml %<CR>:e! %<CR>:redraw!<CR>$/;"	m
+,pt	perl.vim	/^  nnoremap ,pt <Esc>:%!perltidy<CR><C-o>$/;"	m
+,pt	perl.vim	/^  vnoremap ,pt <Esc>:'<,'>!perltidy -q<CR>$/;"	m
+,xl	xml.vim	/^  nnoremap ,xl <Esc>:%!xmllint --format -<CR>$/;"	m
+,xs	xml.vim	/^  nnoremap ,xs <Esc>:%!xmlstarlet fo -<CR>$/;"	m
+<F5>	dosbatch.vim	/^map <F5> :!%<CR>$/;"	m
+<F5>	ps1.vim	/^map <F5> :!powershell %:p<CR>$/;"	m
+ActMake	actdiag.vim	/^function! ActMake()$/;"	f
+BlockMake	blockdiag.vim	/^function! BlockMake()$/;"	f
+CSyntaxCheck	c.vim	/^function! CSyntaxCheck()$/;"	f
+DotMake	dot.vim	/^function! DotMake()$/;"	f
+MarkdownMake	markdown.vim	/^function! MarkdownMake()$/;"	f
+NwMake	nwdiag.vim	/^function! NwMake()$/;"	f
+PacketMake	packetdiag.vim	/^function! PacketMake()$/;"	f
+PlSyntaxCheck	perl.vim	/^function! PlSyntaxCheck()$/;"	f
+PySyntaxCheck	python.vim	/^function! PySyntaxCheck()$/;"	f
+RSTMake	rst.vim	/^function! RSTMake()$/;"	f
+RackMake	rackdiag.vim	/^function! RackMake()$/;"	f
+RbSyntaxCheck	ruby.vim	/^function! RbSyntaxCheck()$/;"	f
+SeqMake	seqdiag.vim	/^function! SeqMake()$/;"	f
+ShSyntaxCheck	sh.vim	/^function! ShSyntaxCheck()$/;"	f
+csyntaxcheck	c.vim	/^  augroup csyntaxcheck$/;"	a
+dotmake	dot.vim	/^  augroup dotmake$/;"	a
+g:quickrun_config	actdiag.vim	/^let g:quickrun_config['actdiag'] = {$/;"	v
+g:quickrun_config	applescript.vim	/^let g:quickrun_config['applescript'] = {$/;"	v
+g:quickrun_config	blockdiag.vim	/^let g:quickrun_config['blockdiag'] = {$/;"	v
+g:quickrun_config	markdown.vim	/^let g:quickrun_config = {$/;"	v
+g:quickrun_config	nwdiag.vim	/^let g:quickrun_config['nwdiag'] = {$/;"	v
+g:quickrun_config	packetdiag.vim	/^let g:quickrun_config['packetdiag'] = {$/;"	v
+g:quickrun_config	rackdiag.vim	/^let g:quickrun_config['rackdiag'] = {$/;"	v
+g:quickrun_config	rst.vim	/^let g:quickrun_config = {$/;"	v
+g:quickrun_config	seqdiag.vim	/^let g:quickrun_config['seqdiag'] = {$/;"	v
+g:sh_indent_case_labels	sh.vim	/^let g:sh_indent_case_labels = 1$/;"	v
+g:xml_syntax_folding	xml.vim	/^let g:xml_syntax_folding = 1$/;"	v
+lisp_rainbow	lisp.vim	/^let lisp_rainbow = 1$/;"	v
+markdownmake	markdown.vim	/^  augroup markdownmake$/;"	a
+perl_fold	perl.vim	/^let perl_fold = 1$/;"	v
+perl_fold_blocks	perl.vim	/^let perl_fold_blocks = 1$/;"	v
+plsyntaxcheck	perl.vim	/^  augroup plsyntaxcheck$/;"	a
+pysyntaxcheck	python.vim	/^  augroup pysyntaxcheck$/;"	a
+rbsyntaxcheck	ruby.vim	/^  augroup rbsyntaxcheck$/;"	a
+rstmake	rst.vim	/^  augroup rstmake$/;"	a
+shsyntaxcheck	sh.vim	/^  augroup shsyntaxcheck$/;"	a
