@@ -1,16 +1,8 @@
-"---------------------------------------------------------------------------
-""" Insert/Normal ModeでStatusLineの色を変更
-"au InsertEnter * hi StatusLine guifg=DarkBlue guibg=DarkYellow gui=none ctermfg=Blue ctermbg=Yellow cterm=none
-"au InsertLeave * hi StatusLine guifg=DarkBlue guibg=DarkGray gui=none ctermfg=Blue ctermbg=DarkGray cterm=none
+"" Appearance Settings by Plugins
 
-"" StatusLine_Insert
-if has('mac')
-    let hi_insert = 'hi StatusLine cterm=none ctermfg=Black ctermbg=Brown'
-elseif has('unix')
-    let hi_insert = 'hi StatusLine cterm=none ctermfg=Black ctermbg=Gray'
-elseif has('win32')
-    let hi_insert = 'hi StatusLine cterm=none ctermfg=Black ctermbg=Gray'
-endif
+"---------------------------------------------------------------------------
+"" Git gutter
+" let g:gitgutter_enabled = 0
 
 "---------------------------------------------------------------------------
 " buftabs: Buffer一覧を表示
