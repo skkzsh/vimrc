@@ -1,3 +1,5 @@
+"" Edit Settings
+
 "---------------------------------------------------------------------------
 " 編集に関する設定:
 
@@ -30,83 +32,13 @@ set formatoptions+=mM
 "C Indent
 set cindent
 
+"" 継続行のIndent
+let g:vim_indent_cont = 0
+
 "---------------------------------------------------------------------------
 " Visual Modeで文字がないところへも移動
 set virtualedit=block
 " block, all, ...
-
-"---------------------------------------------------------------------------
-""" 該当するShebangがあれば, 保存時にChange Mode +x
-""" ただし, b:noshebangchmodxを非0に定義すれば抑制可
-if executable('chmod')
-    augroup shebangchmodx
-        autocmd!
-        autocmd BufWritePost * silent call ShebangChmodX()
-    augroup END
-endif
-
-function! ShebangChmodX()
-    " b:noshebangchmodxが未定義, または0で定義されていれば
-    if !(exists('b:noshebangchmodx') && b:noshebangchmodx != 0)
-        "" +xでなければ
-        if !executable(expand('%:p')) && (
-                    \ getline(1) =~ '^#!.*sh'
-                    \ || getline(1) =~ '^#!.*perl'
-                    \ || getline(1) =~ '^#!.*ruby'
-                    \ || getline(1) =~ '^#!.*python'
-                    \ )
-            "" Change Mode +x
-            !chmod +x %
-        endif
-    endif
-endfunction
-
-""" Change Mode +xするかどうかは拡張子でなく,
-""" 内容で判断するもの(Commandなど)なので,
-""" '該当する拡張子では, 保存時にChange Mode +x'
-""" はボツ
-
-""---------------------------------------------------------------------------
-""" tags
-
-""" Current Dicrectoryにtags Fileが
-""" 存在すれば保存時に更新
-
-"" ctags
-" if filereadable(expand('%:p:h') . '/tags') && executable('ctags')
-if filewritable(expand('%:p:h') . '/tags') && executable('ctags')
-    augroup ctagsupdate
-        autocmd!
-        autocmd BufWritePost * silent !ctags -R
-    augroup END
-endif
-
-"" gtags
-" if filereadable(expand('%:p:h') .'/GTAGS') && executable('gtags')
-if filewritable(expand('%:p:h') .'/GTAGS') && executable('gtags')
-    augroup gtagsupdate
-        autocmd!
-        autocmd BufWritePost * silent !gtags
-    augroup END
-endif
-
-"---------------------------------------------------------------------------
-""" Template
-augroup templates
-    autocmd!
-    " autocmd BufNewFile *.c 0r ~/.auto-insert/template.c
-    " autocmd BufNewFile *.h 0r ~/.auto-insert/template.h
-    " autocmd BufNewFile *.cpp 0r ~/.auto-insert/template.cpp
-    " autocmd BufNewFile *.hpp 0r ~/.auto-insert/template.hpp
-    autocmd BufNewFile *.sh 0r ~/.auto-insert/template.sh
-    autocmd BufNewFile *.pl 0r ~/.auto-insert/template.pl
-    autocmd BufNewFile *.rb 0r ~/.auto-insert/template.rb
-    autocmd BufNewFile *.py 0r ~/.auto-insert/template.py
-    " autocmd BufNewFile *.tex 0r ~/.auto-insert/template.tex
-    autocmd BufNewFile *.org 0r ~/.auto-insert/template.org
-    autocmd BufNewFile *.md,*.mkd,*.mdt,*.mkdn,*.mdwn,*.mark,*.mdown,*.markdown 0r ~/.auto-insert/template.md
-    autocmd BufNewFile *.bat 0r ~/.auto-insert/template.bat
-augroup END
 
 "---------------------------------------------------------------------------
 """ 括弧の自動補完
@@ -123,13 +55,14 @@ augroup END
 
 "---------------------------------------------------------------------------
 """ Aspell/Ispell
+"" TODO
 "map :!aspell --lang=en -c %<CR>
 "map :!aspell --lang=en -c %<CR>
 
 "---------------------------------------------------------------------------
 """ autodate
 " Keyword (Default - pre="\cLast Change:" post="\.")
-" ToDo - EmacsのようにSpaceがあっても有効になるようにする
+" FIXME : EmacsのようにSpaceがあっても有効になるようにする
 let autodate_keyword_pre = "Last Modified: <"
 let autodate_keyword_post = ">"
 " let autodate_keyword_pre = "Last \%(Change\|Modified\):"

@@ -1,3 +1,5 @@
+"" Motion Settings
+
 "---------------------------------------------------------------------------
 """ 検索の挙動に関する設定:
 
@@ -14,8 +16,22 @@ set smartcase
 "---------------------------------------------------------------------------
 """ Command History 保存数
 set history=10000
+
+"---------------------------------------------------------------------------
 "" MiniBuffer時に大文字小文字を無視
-"set wildignorecase
+" Version 7.3072 以降?
+if v:version == 703 && has('patch072')
+  set wildignorecase
+endif
+
+" full, longest, list
+" (C-dでも一覧表示される)
+set wildmode=list,full
+" set wildmode=longest:full,full
+" set wildmode=longest,full
+" set wildmode=longest,list
+" set wildmode=list:full
+" set wildmode=list:longest
 
 "---------------------------------------------------------------------------
 """ マウスを使えるようにする
@@ -24,35 +40,16 @@ set mouse=a
 set ttymouse=xterm2
 
 "---------------------------------------------------------------------------
-""" Fileを開いた時にそのFileのあるDirectoryをCurrent Directoryにする
-augroup grlcd
-    autocmd!
-    autocmd BufEnter * lcd %:p:h
-augroup END
-
-"---------------------------------------------------------------------------
-""" Quickfix Windowsを自動で開く
-augroup autoquickfix
-    autocmd!
-    autocmd QuickFixCmdPost make,vimgrep,grep,helpgrep cwindow
-augroup END
-
-"---------------------------------------------------------------------------
 "" grep
-set grepprg=grep\ -nH
-
-"---------------------------------------------------------------------------
-""" 自動でRead Only
-augroup autoreadonly
-    autocmd!
-    autocmd BufRead,BufNew Changelog*,*.log,*.aux,*.bbl,*.blg set readonly
-augroup END
+if executable('grep')
+  set grepprg=grep\ -nH
+endif
 
 "---------------------------------------------------------------------------
 """ Undo History
 if has('persistent_undo')
-    set undodir=~/.vimundo
-    set undofile
+  set undodir=~/.vimundo
+  set undofile
 endif
 
 "---------------------------------------------------------------------------
