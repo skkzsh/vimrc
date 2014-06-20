@@ -1,0 +1,41 @@
+snippet which
+	which ${1:#:command} > /dev/null 2>&1 ${0:TARGET}
+
+snippet uname
+	case "`uname`" in
+		Linux)
+			${0:TARGET}
+			;;
+		Darwin)
+			
+			;;
+		*) ;;
+	esac
+
+snippet synopsis
+	: << POD
+	
+	=head1 NAME
+	${0:TARGET}
+	=head1 SYNOPSIS
+	
+	=head1 DESCRIPTION
+	
+	=cut
+	POD
+
+snippet getopts
+	flg_a=default${0:TARGET}
+	
+	while getopts a:h opt ;do
+		case $opt in
+			a)
+				flg_a=$OPTARG
+				;;
+			h | \? | *)
+				pod2usage $0
+				return 1
+				;;
+		esac
+	done
+	shift $(($OPTIND -1))

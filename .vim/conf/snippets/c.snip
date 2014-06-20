@@ -1,0 +1,40 @@
+snippet main
+	int main() {
+		
+		${0:TARGET}
+		
+		return 0;
+	}
+
+snippet getopt
+	#include <stdlib.h>
+	#include <unistd.h>
+	
+	void usage(char*);
+	
+	int main(int argc, char *argv[])
+	{ ${0:TARGET}
+		double alpha;
+		int opt;
+		
+		alpha = 0;
+		
+		while((opt = getopt(argc, argv, "a:h")) != -1) {
+			switch(opt) {
+				case 'a': alpha = atof(optarg); break;
+				case 'h':
+				case '?':
+				default : usage(argv[0]);
+			}
+		}
+		while(optind < argc) {
+			fprintf(stderr, "%s processed\n",argv[optind++]);
+		}
+		
+		return 0;
+	}
+	
+	void usage(char *cmd)
+		fprintf(stderr, "%s\n", cmd);
+		exit(EXIT_FAILURE);
+	}

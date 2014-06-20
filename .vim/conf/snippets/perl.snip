@@ -1,0 +1,22 @@
+snippet uname
+	given ($^O) {
+		when('linux') {
+			${0:TARGET}
+		}
+		when('darwin') {
+		}
+		when('MSWin32') {
+		}
+		default {
+			die $^O;
+		}
+	}
+
+snippet synopsis
+	=head1 NAME
+	${0:TARGET}
+	=head1 SYNOPSIS
+	
+	=head1 DESCRIPTION
+	
+	=cut

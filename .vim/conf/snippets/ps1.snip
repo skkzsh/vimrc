@@ -1,0 +1,23 @@
+snippet synopsis
+	<#
+	
+	.SYNOPSIS
+	${0:TARGET}
+	.DESCRIPTION
+	
+	.EXAMPLE
+	
+	#>
+
+snippet gcm
+	gcm ${1:#:command} -ea SilentlyContinue ${0:TARGET}
+
+snippet webclient
+	$wc = New-Object System.Net.WebClient
+	$wc.DownloadFile("${1:url}", "${2:directory}")
+
+snippet admin
+	if (([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(`
+			[Security.Principal.WindowsBuiltInRole] "Administrator")) {
+		${0:TARGET}
+	}

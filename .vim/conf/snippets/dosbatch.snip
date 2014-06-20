@@ -1,0 +1,15 @@
+snippet synopsis
+	GOTO :POD
+	
+	=head1 DESCRIPTION
+	
+	${0:TARGET}
+	
+	=cut
+	:POD
+
+snippet admin
+	NET SESSION > NUL 2>&1
+	IF %ERRORLEVEL% == 0 (
+		${0:TARGET}
+	)
