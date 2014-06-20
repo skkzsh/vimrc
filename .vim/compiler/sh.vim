@@ -1,13 +1,21 @@
-if exists("my_current_compiler")
+if exists("current_compiler")
   finish
 endif
-let my_current_compiler = "sh"
+let current_compiler = "sh"
 
 """ Make Program
 if exists(":CompilerSet") != 2
-    command -nargs=* CompilerSet setlocal <args>
+  command -nargs=* CompilerSet setlocal <args>
 endif
+
+let s:cpo_save = &cpo
+set cpo&vim
+
+" TODO: errorformat
+
 CompilerSet makeprg=sh\ -n
+CompilerSet errorformat=%f:\ line\ %l:\ %m
+"" See syntastic
 
 "" $VIMRUNTIME/compiler/perl.vim
 " CompilerSet errorformat=
@@ -26,3 +34,6 @@ CompilerSet makeprg=sh\ -n
 "             \%-Z%\tfrom\ %f:%l,
 "             \%-Z%p^,
 "     \%-G%.%#
+
+let &cpo = s:cpo_save
+unlet s:cpo_save
