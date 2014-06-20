@@ -1,0 +1,42 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CompilerSet	clang_star.vim	/^    command -nargs=* CompilerSet setlocal <args>$/;"	c
+CompilerSet	csslint.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+CompilerSet	dosbatch.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+CompilerSet	markdown.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+CompilerSet	osascript.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+CompilerSet	ps1.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+CompilerSet	python.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+CompilerSet	sh.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+CompilerSet	trash/cpp.vim	/^    command -nargs=* CompilerSet setlocal <args>$/;"	c
+CompilerSet	xml.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+current_compiler	clang_star.vim	/^let current_compiler = "clang_star"$/;"	v
+current_compiler	csslint.vim	/^let current_compiler = "csslint"$/;"	v
+current_compiler	dosbatch.vim	/^let current_compiler = "dosbatch"$/;"	v
+current_compiler	markdown.vim	/^let current_compiler = "markdown"$/;"	v
+current_compiler	osascript.vim	/^let current_compiler = "osascript"$/;"	v
+current_compiler	ps1.vim	/^let current_compiler = "ps1"$/;"	v
+current_compiler	python.vim	/^let current_compiler = "python"$/;"	v
+current_compiler	sh.vim	/^let current_compiler = "sh"$/;"	v
+current_compiler	trash/cpp.vim	/^let current_compiler = "cpp"$/;"	v
+current_compiler	xml.vim	/^let current_compiler = "xml"$/;"	v
+g:noccompilerset	clang_star.vim	/^      let g:noccompilerset = 1$/;"	v
+g:nocppcompilerset	trash/cpp.vim	/^    let g:nocppcompilerset = 1$/;"	v
+g:nocsscompilerset	csslint.vim	/^  let g:nocsscompilerset = 1$/;"	v
+g:nomarkdowncompilerset	markdown.vim	/^  let g:nomarkdowncompilerset = 1$/;"	v
+g:nopycompilerset	python.vim	/^  let g:nopycompilerset = 1$/;"	v
+g:noxmlcompilerset	xml.vim	/^  let g:noxmlcompilerset = 1$/;"	v
+s:cpo_save	clang_star.vim	/^  let s:cpo_save = &cpo$/;"	v
+s:cpo_save	csslint.vim	/^let s:cpo_save = &cpo$/;"	v
+s:cpo_save	dosbatch.vim	/^let s:cpo_save = &cpo$/;"	v
+s:cpo_save	markdown.vim	/^let s:cpo_save = &cpo$/;"	v
+s:cpo_save	osascript.vim	/^let s:cpo_save = &cpo$/;"	v
+s:cpo_save	ps1.vim	/^let s:cpo_save = &cpo$/;"	v
+s:cpo_save	python.vim	/^let s:cpo_save = &cpo$/;"	v
+s:cpo_save	sh.vim	/^let s:cpo_save = &cpo$/;"	v
+s:cpo_save	trash/cpp.vim	/^  let s:cpo_save = &cpo$/;"	v
+s:cpo_save	xml.vim	/^let s:cpo_save = &cpo$/;"	v
