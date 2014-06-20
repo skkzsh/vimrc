@@ -13,11 +13,13 @@ let $VIM_CONF = expand('$DOT_VIM/conf')
 source $VIM_CONF/base-init.vim
 source $VIM_CONF/appear-init.vim
 source $VIM_CONF/move-init.vim
+source $VIM_CONF/auto-move-init.vim
 source $VIM_CONF/edit-init.vim
+source $VIM_CONF/auto-edit-init.vim
 source $VIM_CONF/abbrev-init.vim
 source $VIM_CONF/ja-init.vim
 
-source $VIM_CONF/vundle-init.vim
+source $VIM_CONF/bundle-init.vim
 
 source $VIM_CONF/color-init.vim
 source $VIM_CONF/plugin-init.vim
