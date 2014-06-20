@@ -6,21 +6,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.6b1J2	//
-CompilerSet	c.vim	/^        command -nargs=* CompilerSet setlocal <args>$/;"	c
-CompilerSet	cpp.vim	/^        command -nargs=* CompilerSet setlocal <args>$/;"	c
-CompilerSet	markdown.vim	/^    command -nargs=* CompilerSet setlocal <args>$/;"	c
-CompilerSet	python.vim	/^    command -nargs=* CompilerSet setlocal <args>$/;"	c
-CompilerSet	rst.vim	/^    command -nargs=* CompilerSet setlocal <args>$/;"	c
-CompilerSet	ruby.vim	/^    command -nargs=* CompilerSet setlocal <args>$/;"	c
-CompilerSet	sh.vim	/^    command -nargs=* CompilerSet setlocal <args>$/;"	c
-g:noccompilerset	c.vim	/^        let g:noccompilerset = 1$/;"	v
-g:nocppcompilerset	cpp.vim	/^        let g:nocppcompilerset = 1$/;"	v
-g:nomarkdowncompilerset	markdown.vim	/^    let g:nomarkdowncompilerset = 1$/;"	v
-g:nopycompilerset	python.vim	/^    let g:nopycompilerset = 1$/;"	v
-my_current_compiler	c.vim	/^let my_current_compiler = "c"$/;"	v
-my_current_compiler	cpp.vim	/^let my_current_compiler = "cpp"$/;"	v
-my_current_compiler	markdown.vim	/^let my_current_compiler = "markdown"$/;"	v
-my_current_compiler	python.vim	/^let my_current_compiler = "python"$/;"	v
-my_current_compiler	rst.vim	/^let my_current_compiler = "rst"$/;"	v
-my_current_compiler	ruby.vim	/^let my_current_compiler = "ruby"$/;"	v
-my_current_compiler	sh.vim	/^let my_current_compiler = "sh"$/;"	v
+CompilerSet	perl.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+CompilerSet	rst.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+CompilerSet	ruby.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+CompilerSet	tidy.vim	/^  command -nargs=* CompilerSet setlocal <args>$/;"	c
+g:nohtmlcompilerset	tidy.vim	/^  let g:nohtmlcompilerset = 1$/;"	v
