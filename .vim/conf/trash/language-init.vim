@@ -1,9 +1,3 @@
-"" Perl Compiler
-" augroup plcompiler
-"     autocmd!
-"     autocmd FileType perl compiler perl
-" augroup END
-
 " 廃止
 " TODO 言語ごとの個別設定はftplugin,compiler等に書く
 "---------------------------------------------------------------------------
