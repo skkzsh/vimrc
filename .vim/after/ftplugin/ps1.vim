@@ -1,8 +1,9 @@
-if exists('b:did_my_ftplugin')
-    finish
-endif
-let b:did_my_ftplugin = 1
+" if exists('b:did_my_ftplugin')
+"   finish
+" endif
+" let b:did_my_ftplugin = 1
 
+"---------------------------------------------------------------------------
 "" Encode
 setlocal fileencoding=cp932
 " setlocal fileencodings=
@@ -11,11 +12,12 @@ setlocal fileencoding=cp932
 setlocal fileformat=dos
 " setlocal fileformats=
 
-""" Make Program
-" if exists(":CompilerSet") != 2
-"     command -nargs=* CompilerSet setlocal <args>
-" endif
-" CompilerSet makeprg=powershell\ %:p
+compiler ps1
+
+""" QuickRun
+" let g:quickrun_config['ps1'] = {
+" \      'command': 'powershell',
+" \ }
 
 "" 実行
 map <F5> :!powershell %:p<CR>
