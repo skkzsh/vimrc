@@ -51,14 +51,18 @@ NeoBundle 'Shougo/junkfile.vim'
 NeoBundle 'Shougo/vimshell'
 " NeoBundle 'Shougo/nyaos'
 
-NeoBundle 'Shougo/vimproc', {
-\ 'build' : {
-\   'windows' : 'make -f make_mingw32.mak',
-\   'cygwin'  : 'make -f make_cygwin.mak',
-\   'mac'     : 'make -f make_mac.mak',
-\   'unix'    : 'make -f make_unix.mak',
+if !(has('win32'))
+  NeoBundle 'Shougo/vimproc.vim', {
+\   'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
 \   },
 \ }
+endif
+
 "" Make する
 "" TODO : NeoBundleで自動化?
 
