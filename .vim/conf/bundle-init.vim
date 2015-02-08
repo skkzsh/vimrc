@@ -83,6 +83,7 @@ NeoBundle 'mattn/webapi-vim'
 " NeoBundle 'mattn/vimplenote-vim'
 if executable('git')
   NeoBundle 'mattn/gist-vim'
+  " NeoBundle 'lambdalisue/vim-gista'
 endif
 
 " osyo-manga
@@ -170,7 +171,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'vim-jp/vimdoc-ja'
 " NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'tsaleh/vim-matchit'
+NeoBundle 'matchit.zip'
 " NeoBundle 'rhysd/clever-f.vim'
 " NeoBundle 'taku-o/vim-batch-source'
 NeoBundle 'tyru/open-browser.vim'
@@ -232,7 +233,13 @@ NeoBundleFetch 'purcell/exec-path-from-shell', {
 \ 'base' : g:emacs_bundle,
 \ }
 NeoBundleFetch 'winterTTr/ace-jump-mode', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
+\ }
+NeoBundleFetch 'tomoya/search-web.el', {
+\ 'base' : g:emacs_bundle,
+\ }
+NeoBundleFetch 'Bruce-Connor/emacs-google-this', {
+\ 'base' : g:emacs_bundle,
 \ }
 NeoBundleFetch 'yoshiki/yaml-mode', {
 \ 'base' : g:emacs_bundle,
@@ -314,6 +321,23 @@ let g:bash_bundle = $HOME . '/.bash/bundle'
 NeoBundleFetch 'seebi/dircolors-solarized', {
 \ 'base' : g:bash_bundle,
 \ }
+" if has('mac')
+"   NeoBundleFetch 'git://git.savannah.gnu.org/screen.git', {
+"   \ 'base' : g:bash_bundle,
+"   \ }
+" endif
+if has('win32')
+  NeoBundleFetch 'joelthelion/autojump', '20.9', {
+  \ 'base' : g:bash_bundle,
+  \ }
+"  \ 'build' : {
+"  \   'windows' : './install.sh',
+"  \   },
+else
+  NeoBundleFetch 'hokaccha/nodebrew', {
+  \ 'base' : g:bash_bundle,
+  \ }
+endif
 
 "" Zsh
 if executable('zsh')
