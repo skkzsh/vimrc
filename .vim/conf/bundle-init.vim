@@ -223,12 +223,12 @@ NeoBundleFetch 'jlr/rainbow-delimiters', {
 NeoBundleFetch 'magit/magit', '1.2.2', {
 \ 'base' : g:emacs_bundle,
 \ 'build' : {
-\   'windows' : 'make',
 \   'cygwin'  : 'make',
 \   'mac'     : 'make',
+\   'linux'   : 'make',
 \   'unix'    : 'make',
 \   },
-\ }
+\}
 NeoBundleFetch 'purcell/exec-path-from-shell', {
 \ 'base' : g:emacs_bundle,
 \ }
@@ -274,7 +274,6 @@ NeoBundleFetch 'tequilasunset/auto-complete-latex-light', {
 NeoBundleFetch 'git://orgmode.org/org-mode.git', {
 \ 'base' : g:emacs_bundle,
 \ 'build' : {
-\   'windows' : 'make',
 \   'cygwin'  : 'make',
 \   'mac'     : 'make',
 \   'linux'   : 'make',
