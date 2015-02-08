@@ -1,48 +1,48 @@
-""" TODO: ~/vimfiles
 if has('win32')
-    let $DOT_VIM = expand('$HOME/vimfiles')
-    " let $DOT_VIM = expand('$VIM/vimfiles')
+  let s:dotvim = 'vimfiles'
 else
-    let $DOT_VIM = expand('~/.vim')
-endif
-
-let $VIM_CONF = expand('$DOT_VIM/conf')
-
-"" source $VIM_CONF/kaoriya-init.vim
-
-source $VIM_CONF/base-init.vim
-source $VIM_CONF/appear-init.vim
-source $VIM_CONF/move-init.vim
-source $VIM_CONF/auto-move-init.vim
-source $VIM_CONF/edit-init.vim
-source $VIM_CONF/auto-edit-init.vim
-source $VIM_CONF/abbrev-init.vim
-source $VIM_CONF/ja-init.vim
-
-source $VIM_CONF/bundle-init.vim
-
-source $VIM_CONF/color-init.vim
-source $VIM_CONF/plugin-init.vim
-source $VIM_CONF/move-plugin-init.vim
-source $VIM_CONF/edit-plugin-init.vim
-source $VIM_CONF/appear-plugin-init.vim
-source $VIM_CONF/internet-init.vim
-source $VIM_CONF/neocomplcache-init.vim
-source $VIM_CONF/unite-init.vim
-source $VIM_CONF/latex-init.vim
-
-source $VIM_CONF/test-init.vim
-
-""" Local
-if isdirectory(expand('$DOT_VIM/local'))
-    let $VIM_LOCAL=expand('$DOT_VIM/local')
-    if filereadable(expand('$VIM_LOCAL/local-init.vim'))
-        source $VIM_LOCAL/local-init.vim
-    endif
+  let s:dotvim = '.vim'
 endif
 
 """ ~/.vimの位置
 """ See s:dotvim in autoload/getscript.vim
+
+let $AUTOINSTALL_VIM = $HOME . '/' . s:dotvim
+let $CONF_VIM = $AUTOINSTALL_VIM . '/conf'
+"" expand('$AUTOINSTALL_VIM/conf')
+
+"" source $CONF_VIM/kaoriya-init.vim
+
+source $CONF_VIM/base-init.vim
+source $CONF_VIM/appear-init.vim
+source $CONF_VIM/move-init.vim
+source $CONF_VIM/auto-move-init.vim
+source $CONF_VIM/edit-init.vim
+source $CONF_VIM/auto-edit-init.vim
+source $CONF_VIM/abbrev-init.vim
+source $CONF_VIM/ja-init.vim
+
+source $CONF_VIM/bundle-init.vim
+
+source $CONF_VIM/color-init.vim
+source $CONF_VIM/plugin-init.vim
+source $CONF_VIM/move-plugin-init.vim
+source $CONF_VIM/edit-plugin-init.vim
+source $CONF_VIM/appear-plugin-init.vim
+source $CONF_VIM/internet-init.vim
+source $CONF_VIM/neocomplcache-init.vim
+source $CONF_VIM/unite-init.vim
+source $CONF_VIM/latex-init.vim
+
+source $CONF_VIM/test-init.vim
+
+""" Local
+let $LOCAL_VIM = $AUTOINSTALL_VIM . '/local'
+if isdirectory($LOCAL_VIM)
+  if filereadable($LOCAL_VIM . '/local-init.vim')
+    source $LOCAL_VIM/local-init.vim
+  endif
+endif
 
 """ Memo
 "" 最後に定義された場所のCheck - verbose set HOGE?

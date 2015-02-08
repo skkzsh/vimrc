@@ -5,17 +5,18 @@ filetype off
 
 "" Vundleを初期化して
 "" Vundle自身もVundleで管理
-set rtp+=$DOT_VIM/bundle/vundle/
-call vundle#rc('$DOT_VIM/bundle')
+set runtimepath+=$AUTOINSTALL_VIM/bundle/vundle
+call vundle#rc($AUTOINSTALL_VIM . '/bundle')
 
 "" Proxy対策
 " let g:neobundle_default_git_protocol='https'
 
 if has('vim_starting')
-  set runtimepath+=$DOT_VIM/bundle/neobundle.vim
+  set runtimepath+=$AUTOINSTALL_VIM/bundle/neobundle.vim
 endif
 
-call neobundle#rc(expand('$DOT_VIM/bundle'))
+call neobundle#begin($AUTOINSTALL_VIM . '/bundle')
+"" expand('$AUTOINSTALL_VIM/bundle')
 
 "---------------------------------------------------------------------------
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -207,27 +208,15 @@ NeoBundle 'git@bitbucket.org:skkzsh/vim-blockdiags.git'
 
 "---------------------------------------------------------------------------
 "" Emacs
-let $EMACS_BUNDLE = expand('$HOME/.emacs.d/bundle')
-" NeoBundleFetch 'capitaomorte/yasnippet', {
-" \ 'base' : $EMACS_BUNDLE,
-" \ }
-NeoBundleFetch 'capitaomorte/yasnippet', '0.8.0', {
-\ 'base' : $EMACS_BUNDLE,
+let g:emacs_bundle = $HOME . '/.emacs.d/bundle'
+NeoBundleFetch 'capitaomorte/yasnippet', {
+\ 'base' : g:emacs_bundle,
 \ }
 NeoBundleFetch 'jlr/rainbow-delimiters', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
 \ }
-" NeoBundleFetch 'magit/magit', {
-" \ 'base' : $EMACS_BUNDLE,
-" \ 'build' : {
-" \   'windows' : 'make',
-" \   'cygwin'  : 'make',
-" \   'mac'     : 'make',
-" \   'unix'    : 'make',
-" \   },
-" \}
-NeoBundleFetch 'magit/magit', 'maint', {
-\ 'base' : $EMACS_BUNDLE,
+NeoBundleFetch 'magit/magit', '1.2.2', {
+\ 'base' : g:emacs_bundle,
 \ 'build' : {
 \   'windows' : 'make',
 \   'cygwin'  : 'make',
@@ -236,117 +225,130 @@ NeoBundleFetch 'magit/magit', 'maint', {
 \   },
 \ }
 NeoBundleFetch 'purcell/exec-path-from-shell', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
 \ }
 NeoBundleFetch 'winterTTr/ace-jump-mode', {
 \ 'base' : $EMACS_BUNDLE,
 \ }
 NeoBundleFetch 'yoshiki/yaml-mode', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
+\ 'build' : {
+\   'cygwin'  : 'make',
+\   'mac'     : 'make',
+\   'linux'   : 'make',
+\   'unix'    : 'make',
+\   },
 \ }
 NeoBundleFetch 'sellout/emacs-color-theme-solarized', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
 \ }
 NeoBundleFetch 'knu/elscreen', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
 \ }
 NeoBundleFetch 'eschulte/org-S5', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
 \ }
 NeoBundleFetch 'maple/emacsfiles', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
 \ }
 NeoBundleFetch 'kiwanami/emacs-calfw', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
 \ }
 NeoBundleFetch 'tequilasunset/auto-complete-latex-light', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
 \ }
+" NeoBundleFetch 'bruceravel/gnuplot-mode', {
+" \ 'base' : g:emacs_bundle,
+" \ }
 NeoBundleFetch 'git://orgmode.org/org-mode.git', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
 \ 'build' : {
 \   'windows' : 'make',
 \   'cygwin'  : 'make',
 \   'mac'     : 'make',
+\   'linux'   : 'make',
 \   'unix'    : 'make',
 \   },
 \ }
 NeoBundleFetch 'git://jblevins.org/git/markdown-mode.git', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
 \ }
 
 NeoBundleFetch 'http://git.chise.org/git/elisp/apel.git', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
 \ }
 NeoBundleFetch 'http://git.chise.org/git/elisp/flim.git', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
 \ }
 NeoBundleFetch 'http://git.chise.org/git/elisp/semi.git', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
 \ }
 NeoBundleFetch 'wanderlust/wanderlust', {
-\ 'base' : $EMACS_BUNDLE,
+\ 'base' : g:emacs_bundle,
 \ }
 
 if executable('hg')
   NeoBundleFetch 'http://www.yatex.org/hgrepos/yatex', {
   \ 'type' : 'hg',
   \ 'name' : 'yatex',
-  \ 'base' : $EMACS_BUNDLE,
+  \ 'base' : g:emacs_bundle,
   \ }
 endif
 
 if executable('svn')
   NeoBundleFetch 'http://svn.coderepos.org/share/lang/elisp/anything-c-moccur', {
-  \ 'base' : $EMACS_BUNDLE,
+  \ 'base' : g:emacs_bundle,
   \ }
   NeoBundleFetch 'http://emacs-evernote-mode.googlecode.com/svn/trunk', {
   \ 'name' : 'evernote-mode',
-  \ 'base' : $EMACS_BUNDLE,
+  \ 'base' : g:emacs_bundle,
   \ }
 endif
 
 "" Bash
-let $BASH_BUNDLE = expand('$HOME/.bash/bundle')
-NeoBundleFetch 'hokaccha/nodebrew', {
-\ 'base' : $BASH_BUNDLE,
-\ }
+let g:bash_bundle = $HOME . '/.bash/bundle'
 NeoBundleFetch 'seebi/dircolors-solarized', {
-\ 'base' : $BASH_BUNDLE,
+\ 'base' : g:bash_bundle,
 \ }
 
 "" Zsh
 if executable('zsh')
-  let $ZSH_BUNDLE = expand('$HOME/.zsh/bundle')
+  let g:zsh_bundle = $HOME . '/.zsh/bundle'
 
   NeoBundleFetch 'zsh-users/antigen', {
-  \ 'base' : $ZSH_BUNDLE,
+  \ 'base' : g:zsh_bundle,
   \ }
   NeoBundleFetch 'robbyrussell/oh-my-zsh', {
-  \ 'base' : $ZSH_BUNDLE,
+  \ 'base' : g:zsh_bundle,
   \ }
+  " NeoBundleFetch 'sorin-ionescu/prezto', {
+  " \ 'base' : g:zsh_bundle,
+  " \ }
   NeoBundleFetch 'grml/zsh-lovers', {
-  \ 'base' : $ZSH_BUNDLE,
+  \ 'base' : g:zsh_bundle,
   \ }
   NeoBundleFetch 'hchbaw/auto-fu.zsh', {
-  \ 'base' : $ZSH_BUNDLE,
+  \ 'base' : g:zsh_bundle,
   \ }
   " NeoBundleFetch 'zsh-users/zsh-completions', {
-  " \ 'base' : $ZSH_BUNDLE,
+  " \ 'base' : g:zsh_bundle,
   " \ }
   " NeoBundleFetch 'zsh-users/zsh-syntax-highlighting', {
-  " \ 'base' : $ZSH_BUNDLE,
+  " \ 'base' : g:zsh_bundle,
   " \ }
   " NeoBundleFetch 'zsh-users/zaw', {
-  " \ 'base' : $ZSH_BUNDLE,
+  " \ 'base' : g:zsh_bundle,
   " \ }
 
-  " unlet ZSH_BUNDLE
+  unlet g:zsh_bundle
 endif
 
-" unlet EMACS_BUNDLE BASH_BUNDLE
+unlet g:emacs_bundle g:bash_bundle
+"" $EMACS_BUNDLE
 
 "---------------------------------------------------------------------------
+call neobundle#end()
+
 "" File Type検出, Plugin, IndentをON
 filetype plugin indent on
 
