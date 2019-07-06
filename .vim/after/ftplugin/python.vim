@@ -17,6 +17,10 @@ setlocal smarttab
 " setlocal foldmethod=indent
 " setlocal foldlevel=99
 
+if has('gui_running')
+  setlocal cursorcolumn
+endif
+
 "---------------------------------------------------------------------------
 "" Omni completion
 " setlocal omnifunc=pythoncomplete#Complete
