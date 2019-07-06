@@ -3,9 +3,6 @@
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim7用試作
 
-" Last Change: .
-" Last Modified: <2012/07/08 13:37:38 JST>
-"
 " 解説:
 " このファイルにはVimの起動時に必ず設定される、編集時の挙動に関する設定が書
 " かれています。GUIに関する設定はgvimrcに書かかれています。
@@ -95,7 +92,7 @@ if has('keymap')
 endif
 
 " 非GUI日本語コンソールを使っている場合の設定
-if !has('gui_running') && &encoding != 'utf-8' && &term == 'win32' "cp932からutf-8に変更
+if !has('gui_running') && &encoding !=? 'utf-8' && &term ==? 'win32' "cp932からutf-8に変更
   set termencoding=cp932
 endif
 
@@ -109,7 +106,7 @@ endif
 " Bram氏の提供する設定例をインクルード (別ファイル:vimrc_example.vim)。これ
 " 以前にg:no_vimrc_exampleに非0な値を設定しておけばインクルードはしない。
 if 1 && (!exists('g:no_vimrc_example') || g:no_vimrc_example == 0)
-  if &guioptions !~# "M"
+  if &guioptions !~# 'M'
     " vimrc_example.vimを読み込む時はguioptionsにMフラグをつけて、syntax on
     " やfiletype plugin onが引き起こすmenu.vimの読み込みを避ける。こうしない
     " とencに対応するメニューファイルが読み込まれてしまい、これの後で読み込
@@ -136,11 +133,11 @@ endif
 " コンソールでのカラー表示のための設定(暫定的にUNIX専用)
 if has('unix') && !has('gui_running')
   let uname = system('uname')
-  if uname =~? "linux"
+  if uname =~? 'linux'
     set term=builtin_linux
-  elseif uname =~? "freebsd"
+  elseif uname =~? 'freebsd'
     set term=builtin_cons25
-  elseif uname =~? "Darwin"
+  elseif uname =~? 'Darwin'
     set term=beos-ansi
   else
     set term=builtin_xterm

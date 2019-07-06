@@ -10,8 +10,9 @@ filetype plugin indent on
 "---------------------------------------------------------------------------
 " Bram氏の提供する設定例をインクルード (別ファイル:vimrc_example.vim)。これ
 " 以前にg:no_vimrc_exampleに非0な値を設定しておけばインクルードはしない。
-if 1 && (!exists('g:no_vimrc_example') || g:no_vimrc_example == 0)
-  if &guioptions !~# "M"
+if filereadable($VIMRUNTIME . '/vimrc_example.vim')
+\ && (!exists('g:no_vimrc_example') || g:no_vimrc_example == 0)
+  if &guioptions !~# 'M'
     " vimrc_example.vimを読み込む時はguioptionsにMフラグをつけて、syntax on
     " やfiletype plugin onが引き起こすmenu.vimの読み込みを避ける。こうしない
     " とencに対応するメニューファイルが読み込まれてしまい、これの後で読み込
@@ -77,3 +78,12 @@ map! <C-d> <Del>
 "cmap <> <C-i>
 "cmap <> <C-f>
 "cmap <> <C-a>
+
+"---------------------------------------------------------------------------
+" Python3
+" if has('mac')
+  " set pythonthreehome=$HOME/.pyenv/versions/3.6.4
+  " set pythonthreedll=$HOME/.pyenv/versions/3.6.4/lib/libpython3.6m.a
+  " set pythonthreehome=/usr/local/opt/python3/Frameworks/Python.framework/Versions/3.7
+  " set pythonthreedll=/usr/local/opt/python3/Frameworks/Python.framework/Versions/3.7/Python
+" endif

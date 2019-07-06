@@ -20,9 +20,7 @@ set history=10000
 "---------------------------------------------------------------------------
 "" MiniBuffer時に大文字小文字を無視
 " Version 7.3072 以降?
-if v:version == 703 && has('patch072')
-  set wildignorecase
-endif
+set wildignorecase
 
 " full, longest, list
 " (C-dでも一覧表示される)
@@ -37,7 +35,9 @@ set wildmode=list,full
 """ マウスを使えるようにする
 "" Macで使えない
 set mouse=a
-set ttymouse=xterm2
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 
 "---------------------------------------------------------------------------
 "" grep

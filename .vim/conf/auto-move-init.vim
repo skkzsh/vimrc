@@ -30,5 +30,6 @@ augroup END
 """ 自動でRead Only
 augroup autoreadonly
   autocmd!
-  autocmd BufRead,BufNew Changelog*,*.log,*.aux,*.bbl,*.blg set readonly
+  autocmd BufRead,BufNew Changelog*,*.log set readonly
+  " *.aux,*.bbl,*.blg
 augroup END

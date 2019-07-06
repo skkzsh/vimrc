@@ -15,10 +15,10 @@ function! ShebangChmodX()
   if !(exists('b:noshebangchmodx') && b:noshebangchmodx != 0)
     "" +xでなければ
     if !executable(expand('%:p')) && (
-    \ getline(1) =~ '^#!.*sh'
-    \ || getline(1) =~ '^#!.*perl'
-    \ || getline(1) =~ '^#!.*ruby'
-    \ || getline(1) =~ '^#!.*python'
+    \ getline(1) =~# '^#!.*sh'
+    \ || getline(1) =~# '^#!.*perl'
+    \ || getline(1) =~# '^#!.*ruby'
+    \ || getline(1) =~# '^#!.*python'
     \ )
       "" Change Mode +x
       silent !chmod +x %

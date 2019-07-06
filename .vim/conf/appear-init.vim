@@ -20,6 +20,7 @@ set title
 " set statusline=
 """ 括弧入力時に対応する括弧の表示
 set showmatch
+set matchtime=1
 
 "タブバーの表示
 "set showtabline=2

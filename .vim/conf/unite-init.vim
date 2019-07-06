@@ -11,8 +11,10 @@ let g:unite_source_file_mru_limit = 1000
 imap <C-l> <Plug>(neocomplcache_start_unite_complete)
 
 "" ESCキーを2回押すと終了する
-au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+augroup uniteescape
+  autocmd FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+  autocmd FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+augroup END
 
 "" "Unite Prefix Key
 nnoremap [unite] <Nop>
@@ -31,6 +33,7 @@ noremap [unite]bm :<C-u>Unite bookmark -buffer-name=bookmark<CR>
 "" Grep
 noremap [unite]gr :<C-u>Unite grep -buffer-name=grep<CR>
 noremap [unite]vg :<C-u>Unite vimgrep -buffer-name=vimgrep<CR>
+noremap [unite]gg :<C-u>Unite grep/git -buffer-name=git-grep<CR>
 "" Ref
 noremap [unite]rmn :<C-u>Unite ref/man -buffer-name=man<CR>
 noremap [unite]rpl :<C-u>Unite ref/perldoc -buffer-name=perldoc<CR>
@@ -52,11 +55,11 @@ noremap [unite]jf :<C-u>Unite junkfile -buffer-name=junkfile<CR>
 
 "---------------------------------------------------------------------------
 "" ウィンドウを分割して開く
-" au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-" au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+" autocmd FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+" autocmd FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
 "" ウィンドウを縦に分割して開く
-" au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-" au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+" autocmd FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+" autocmd FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
 
 "---------------------------------------------------------------------------
 "" Plugins

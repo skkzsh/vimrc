@@ -19,6 +19,10 @@ else
 endif
 
 "---------------------------------------------------------------------------
+"" Ansible
+let g:ansible_options = {'documentation_mapping': '<C-K>'}
+
+"---------------------------------------------------------------------------
 """ localrc
 "" 最初に読み込むlocalrc, .first.vimrcを定義
 "" SyntaxCheckやShebangChmodXなどのautocmdを

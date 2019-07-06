@@ -54,6 +54,12 @@ set virtualedit=block
 " vnoremap ' "zdi'<C-R>z'<ESC>
 
 "---------------------------------------------------------------------------
+" Use gpg1
+" if executable('gpg2') && executable('gpg1')
+"   set =gpg1
+" endif
+
+"---------------------------------------------------------------------------
 """ Aspell/Ispell
 "" TODO
 "map :!aspell --lang=en -c %<CR>
@@ -63,10 +69,10 @@ set virtualedit=block
 """ autodate
 " Keyword (Default - pre="\cLast Change:" post="\.")
 " FIXME : EmacsのようにSpaceがあっても有効になるようにする
-let autodate_keyword_pre = "Last Modified: <"
-let autodate_keyword_post = ">"
-" let autodate_keyword_pre = "Last \%(Change\|Modified\):"
-" let autodate_keyword_pre = "Last Modified:"
-" let autodate_keyword_post = "."
+let autodate_keyword_pre = 'Last Modified: <'
+let autodate_keyword_post = '>'
+" let autodate_keyword_pre = 'Last \%(Change\|Modified\):'
+" let autodate_keyword_pre = 'Last Modified:'
+" let autodate_keyword_post = '.'
 "" Format
-let autodate_format = "%Y/%m/%d %H:%M:%S %Z"
+let autodate_format = '%Y/%m/%d %H:%M:%S %Z'
