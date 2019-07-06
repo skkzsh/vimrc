@@ -12,14 +12,14 @@ set cpo&vim
 
 """ 上から順にCommandの存在をCheckして
 """ 存在すればそれをMake Programにする
-if executable('flake8')
-  CompilerSet makeprg=flake8
-elseif executable('pychecker')
+if executable('pychecker')
   CompilerSet makeprg=pychecker
-elseif executable('pyflakes')
-  CompilerSet makeprg=pyflakes
+elseif executable('flake8')
+  CompilerSet makeprg=flake8
 elseif executable('pep8')
   CompilerSet makeprg=pep8
+elseif executable('pyflakes')
+  CompilerSet makeprg=pyflakes
 elseif executable('pylint')
   CompilerSet makeprg=pylint
 else
