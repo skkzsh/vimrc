@@ -44,7 +44,7 @@ set t_Co=256
 
 "" CursorColumn
 " set cursorcolumn
-" highlight CursorColumn term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE
+" highlight CursorColumn term=NONE cterm=standout ctermfg=NONE ctermbg=NONE
 
 
 "---------------------------------------------------------------------------
@@ -69,7 +69,7 @@ scriptencoding utf-8
 "" XXX : Helpに入った時に可視化されてしまう
 "" 以下でOK?
 function! MoreHighlight()
-  if &filetype != 'help'
+  if &filetype != 'help' && &filetype != 'go'
     "" 全角Space
     syntax match ZenkakuSpace "　" display containedin=ALL
     "" Tab文字
@@ -113,8 +113,14 @@ endfunction
 " augroup END
 
 "---------------------------------------------------------------------------
+" lightline
+" let g:lightline = {
+" \ 'colorscheme': 'wombat',
+" \ }
+
+"---------------------------------------------------------------------------
 " Power Line
 " TODO
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
 " let g:Powerline_theme = ''
 " let g:Powerline_colorscheme = ''
