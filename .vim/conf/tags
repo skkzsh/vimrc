@@ -1,31 +1,33 @@
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
-!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
-!_TAG_PROGRAM_NAME	Exuberant Ctags	//
-!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-$BASH_BUNDLE	bundle-init.vim	/^let $BASH_BUNDLE = expand('$HOME\/.bash\/bundle')$/;"	v
-$EMACS_BUNDLE	bundle-init.vim	/^let $EMACS_BUNDLE = expand('$HOME\/.emacs.d\/bundle')$/;"	v
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/ec7b647/
 $PATH	kaoriya-init.vim	/^  let $PATH = $VIM . ';' . $PATH$/;"	v
-$ZSH_BUNDLE	bundle-init.vim	/^  let $ZSH_BUNDLE = expand('$HOME\/.zsh\/bundle')$/;"	v
 ,jd	plugin-init.vim	/^noremap ,jd :Junk dropbox<CR>$/;"	m
 ,jl	plugin-init.vim	/^noremap ,jl :Junk local<CR>$/;"	m
 ,tl	move-plugin-init.vim	/^map ,tl :Tlist<CR>$/;"	m
 ,u	unite-init.vim	/^nmap ,u [unite]$/;"	m
+<BS>	neocomplete-init.vim	/^inoremap <expr><BS>  neocomplete#smart_close_popup()."\\<C-h>"$/;"	m
 <C-a>	base-init.vim	/^map! <C-a> <Home>$/;"	m
 <C-b>	base-init.vim	/^map! <C-b> <Left>$/;"	m
 <C-d>	base-init.vim	/^map! <C-d> <Del>$/;"	m
 <C-e>	base-init.vim	/^imap <C-e> <End>$/;"	m
 <C-f>	base-init.vim	/^map! <C-f> <Right>$/;"	m
+<C-h>	neocomplete-init.vim	/^inoremap <expr><C-h> neocomplete#smart_close_popup()."\\<C-h>"$/;"	m
 <C-i>	move-plugin-init.vim	/^map <C-i> <Plug>(poslist-next-pos)$/;"	m
-<C-k>	neocomplcache-init.vim	/^imap <C-k> <Plug>(neosnippet_expand_or_jump)$/;"	m
+<C-k>	neocomplete-init.vim	/^imap <C-k> <Plug>(neosnippet_expand_or_jump)$/;"	m
+<C-k>	neocomplete-init.vim	/^smap <C-k> <Plug>(neosnippet_expand_or_jump)$/;"	m
 <C-l>	unite-init.vim	/^imap <C-l> <Plug>(neocomplcache_start_unite_complete)$/;"	m
 <C-n>	base-init.vim	/^imap <C-n> <Down>$/;"	m
 <C-o>	move-plugin-init.vim	/^map <C-o> <Plug>(poslist-prev-pos)$/;"	m
 <C-p>	base-init.vim	/^imap <C-p> <Up>$/;"	m
+<CR>	neocomplete-init.vim	/^inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>$/;"	m
 <Leader><C-i>	move-plugin-init.vim	/^map <Leader><C-i> <Plug>(poslist-next-buf)$/;"	m
 <Leader><C-o>	move-plugin-init.vim	/^map <Leader><C-o> <Plug>(poslist-prev-buf)$/;"	m
-<TAB>	neocomplcache-init.vim	/^inoremap <expr><TAB>  pumvisible() ? "\\<C-n>" : "\\<TAB>"$/;"	m
+<TAB>	neocomplete-init.vim	/^inoremap <expr><TAB>  pumvisible() ? "\\<C-n>" : "\\<TAB>"$/;"	m
 CtagsUpdate	auto-edit-init.vim	/^function! CtagsUpdate()$/;"	f
 GrLcd	auto-move-init.vim	/^function! GrLcd()$/;"	f
 GtagsUpdate	auto-edit-init.vim	/^function! GtagsUpdate()$/;"	f
@@ -39,6 +41,7 @@ ShebangChmodX	auto-edit-init.vim	/^function! ShebangChmodX()$/;"	f
 [unite]bf	unite-init.vim	/^noremap [unite]bf :<C-u>Unite buffer -buffer-name=buffer<CR>$/;"	m
 [unite]bm	unite-init.vim	/^noremap [unite]bm :<C-u>Unite bookmark -buffer-name=bookmark<CR>$/;"	m
 [unite]fl	unite-init.vim	/^noremap [unite]fl :<C-u>Unite file -buffer-name=file<CR>$/;"	m
+[unite]gg	unite-init.vim	/^noremap [unite]gg :<C-u>Unite grep\/git -buffer-name=git-grep<CR>$/;"	m
 [unite]gr	unite-init.vim	/^noremap [unite]gr :<C-u>Unite grep -buffer-name=grep<CR>$/;"	m
 [unite]gs	unite-init.vim	/^noremap [unite]gs :<C-u>Unite gist -buffer-name=gist<CR>$/;"	m
 [unite]hc	unite-init.vim	/^noremap [unite]hc :<C-u>Unite history\/command -buffer-name=command-history<CR>$/;"	m
@@ -58,18 +61,15 @@ ShebangChmodX	auto-edit-init.vim	/^function! ShebangChmodX()$/;"	f
 [unite]rri	unite-init.vim	/^noremap [unite]rri :<C-u>Unite ref\/ri -buffer-name=ri<CR>$/;"	m
 [unite]tg	unite-init.vim	/^noremap [unite]tg :<C-u>Unite tag -buffer-name=tag<CR>$/;"	m
 [unite]vg	unite-init.vim	/^noremap [unite]vg :<C-u>Unite vimgrep -buffer-name=vimgrep<CR>$/;"	m
-_open_junk_file	trash/junk-init.vim	/^function! s:_open_junk_file(args) "{{{$/;"	f
-_stamp	abbrev-init.vim	/^inoreabbrev _stamp Last Modified: <$/;"	m
-autodate_format	edit-init.vim	/^let autodate_format = "%Y\/%m\/%d %H:%M:%S %Z"$/;"	v
-autodate_keyword_post	edit-init.vim	/^let autodate_keyword_post = ">"$/;"	v
-autodate_keyword_pre	edit-init.vim	/^let autodate_keyword_pre = "Last Modified: <"$/;"	v
+autodate_format	edit-init.vim	/^let autodate_format = '%Y\/%m\/%d %H:%M:%S %Z'$/;"	v
+autodate_keyword_post	edit-init.vim	/^let autodate_keyword_post = '>'$/;"	v
+autodate_keyword_pre	edit-init.vim	/^let autodate_keyword_pre = 'Last Modified: <'$/;"	v
 autoquickfix	auto-move-init.vim	/^augroup autoquickfix$/;"	a
 autoreadonly	auto-move-init.vim	/^augroup autoreadonly$/;"	a
 ctagsupdate	auto-edit-init.vim	/^  augroup ctagsupdate$/;"	a
 firstlocalrc	plugin-init.vim	/^augroup firstlocalrc$/;"	a
 g:Align_xstrlen	edit-plugin-init.vim	/^let g:Align_xstrlen = 3$/;"	v
 g:EasyMotion_leader_key	move-plugin-init.vim	/^let g:EasyMotion_leader_key = ';'$/;"	v
-g:Powerline_symbols	color-init.vim	/^let g:Powerline_symbols = 'fancy'$/;"	v
 g:Tex_BibtexFlavor	latex-init.vim	/^let g:Tex_BibtexFlavor = 'jbibtex'$/;"	v
 g:Tex_CompileRule_dvi	latex-init.vim	/^let g:Tex_CompileRule_dvi = 'platex -kanji=euc --interaction=nonstopmode $*'$/;"	v
 g:Tex_CompileRule_pdf	latex-init.vim	/^let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'$/;"	v
@@ -81,6 +81,10 @@ g:Tex_ViewRule_dvi	latex-init.vim	/^  let g:Tex_ViewRule_dvi = 'xdvi'$/;"	v
 g:Tex_ViewRule_pdf	latex-init.vim	/^  let g:Tex_ViewRule_pdf = 'AcroRd32'$/;"	v
 g:Tex_ViewRule_pdf	latex-init.vim	/^  let g:Tex_ViewRule_pdf = 'apvlv'$/;"	v
 g:Tex_ViewRule_pdf	latex-init.vim	/^  let g:Tex_ViewRule_pdf = 'xpdf'$/;"	v
+g:ansible_options	plugin-init.vim	/^let g:ansible_options = {'documentation_mapping': '<C-K>'}$/;"	v
+g:bash_bundle	bundle-init.vim	/^let g:bash_bundle = $HOME . '\/.bash\/bundle'$/;"	v
+g:emacs_bundle	bundle-init.vim	/^let g:emacs_bundle = $HOME . '\/.emacs.d\/bundle'$/;"	v
+g:emacs_bundle	trash/bundle-init.vim	/^  let g:emacs_bundle = $HOME . '\/.emacs.d\/bundle'$/;"	v
 g:errormarker_errorgroup	plugin-init.vim	/^let g:errormarker_errorgroup = 'Error'$/;"	v
 g:errormarker_erroricon	plugin-init.vim	/^  let g:errormarker_erroricon = expand('~\/.vim\/signs\/err.bmp')$/;"	v
 g:errormarker_erroricon	plugin-init.vim	/^  let g:errormarker_erroricon = expand('~\/.vim\/signs\/err.png')$/;"	v
@@ -93,20 +97,23 @@ g:gist_clip_command	internet-init.vim	/^  let g:gist_clip_command = 'pbcopy'$/;"
 g:gist_clip_command	internet-init.vim	/^  let g:gist_clip_command = 'xclip -selection clipboard'$/;"	v
 g:gist_detect_filetype	internet-init.vim	/^let g:gist_detect_filetype = 1$/;"	v
 g:junkfile#directory	plugin-init.vim	/^let g:junkfile#directory = $HOME . '\/.junk' . strftime('\/%y')$/;"	v
-g:neocomplcache_clang_library_path	neocomplcache-init.vim	/^    let g:neocomplcache_clang_library_path = '\/usr\/local\/lib'$/;"	v
-g:neocomplcache_clang_use_library	neocomplcache-init.vim	/^      let g:neocomplcache_clang_use_library=1$/;"	v
-g:neocomplcache_clang_user_options	neocomplcache-init.vim	/^    let g:neocomplcache_clang_user_options =$/;"	v
-g:neocomplcache_enable_at_startup	neocomplcache-init.vim	/^let g:neocomplcache_enable_at_startup = 1$/;"	v
-g:neocomplcache_enable_quick_match	neocomplcache-init.vim	/^let g:neocomplcache_enable_quick_match = 1$/;"	v
-g:neocomplcache_enable_smart_case	neocomplcache-init.vim	/^let g:neocomplcache_enable_smart_case = 1$/;"	v
-g:neocomplcache_max_list	neocomplcache-init.vim	/^let g:neocomplcache_max_list = 1000$/;"	v
-g:neocomplcache_omni_patterns	neocomplcache-init.vim	/^  let g:neocomplcache_omni_patterns = {}$/;"	v
-g:neosnippet#snippets_directory	neocomplcache-init.vim	/^let g:neosnippet#snippets_directory = $DOT_VIM . '\/conf\/snippets'$/;"	v
+g:neocomplete#enable_at_startup	neocomplete-init.vim	/^let g:neocomplete#enable_at_startup = 1$/;"	v
+g:neocomplete#enable_smart_case	neocomplete-init.vim	/^let g:neocomplete#enable_smart_case = 1$/;"	v
+g:neocomplete#sources#omni#input_patterns	neocomplete-init.vim	/^  let g:neocomplete#sources#omni#input_patterns = {}$/;"	v
+g:neosnippet#snippets_directory	neocomplete-init.vim	/^let g:neosnippet#snippets_directory = $CONF_VIM . '\/snippets'$/;"	v
 g:quickrun_config	move-plugin-init.vim	/^let g:quickrun_config = {}$/;"	v
 g:ref_alc_encoding	move-plugin-init.vim	/^let g:ref_alc_encoding = 'utf-8'$/;"	v
 g:ref_source_webdict_sites	move-plugin-init.vim	/^let g:ref_source_webdict_sites = {$/;"	v
 g:ref_source_webdict_sites	move-plugin-init.vim	/^let g:ref_source_webdict_sites.default = 'e'$/;"	v
+g:syntastic_always_populate_loc_list	move-plugin-init.vim	/^let g:syntastic_always_populate_loc_list = 1$/;"	v
+g:syntastic_auto_loc_list	move-plugin-init.vim	/^let g:syntastic_auto_loc_list = 1$/;"	v
+g:syntastic_check_on_open	move-plugin-init.vim	/^let g:syntastic_check_on_open = 1$/;"	v
+g:syntastic_check_on_wq	move-plugin-init.vim	/^let g:syntastic_check_on_wq = 0$/;"	v
+g:syntastic_dockerfile_checkers	move-plugin-init.vim	/^  let g:syntastic_dockerfile_checkers = ['hadolint']$/;"	v
 g:syntastic_mode_map	move-plugin-init.vim	/^let g:syntastic_mode_map = {$/;"	v
+g:syntastic_sh_checkers	move-plugin-init.vim	/^  let g:syntastic_sh_checkers = ['shellcheck']$/;"	v
+g:syntastic_vim_checkers	move-plugin-init.vim	/^  let g:syntastic_vim_checkers = ['vint']$/;"	v
+g:syntastic_yaml_checkers	move-plugin-init.vim	/^  let g:syntastic_yaml_checkers = ['yamllint']$/;"	v
 g:tex_flavor	latex-init.vim	/^let g:tex_flavor = 'latex'$/;"	v
 g:unite_enable_start_insert	unite-init.vim	/^let g:unite_enable_start_insert = 1$/;"	v
 g:unite_source_ack_command	unite-init.vim	/^  let g:unite_source_ack_command = 'ack'$/;"	v
@@ -114,6 +121,7 @@ g:unite_source_file_mru_limit	unite-init.vim	/^let g:unite_source_file_mru_limit
 g:vim_indent_cont	edit-init.vim	/^let g:vim_indent_cont = 0$/;"	v
 g:vimfiler_as_default_explorer	move-plugin-init.vim	/^let g:vimfiler_as_default_explorer = 1$/;"	v
 g:vimfiler_safe_mode_by_default	move-plugin-init.vim	/^let g:vimfiler_safe_mode_by_default = 0$/;"	v
+g:vimproc#download_windows_dll	bundle-init.vim	/^  let g:vimproc#download_windows_dll = 1$/;"	v
 g:w3m#external_browser	internet-init.vim	/^let g:w3m#external_browser = 'opera'$/;"	v
 g:w3m#hit_a_hint_key	internet-init.vim	/^let g:w3m#hit_a_hint_key = 'f'$/;"	v
 g:w3m#homepage	internet-init.vim	/^let g:w3m#homepage = "http:\/\/www.google.co.jp"$/;"	v
@@ -122,12 +130,16 @@ g:yankring_history_dir	edit-plugin-init.vim	/^let g:yankring_history_dir = expan
 g:yankring_history_file	edit-plugin-init.vim	/^let g:yankring_history_file = '.yankring_history'$/;"	v
 g:yankring_max_history	edit-plugin-init.vim	/^let g:yankring_max_history = 50$/;"	v
 g:yankring_window_height	edit-plugin-init.vim	/^let g:yankring_window_height = 13$/;"	v
+g:zsh_bundle	bundle-init.vim	/^  let g:zsh_bundle = $HOME . '\/.zsh\/bundle'$/;"	v
 grlcd	auto-move-init.vim	/^augroup grlcd$/;"	a
 gtagsupdate	auto-edit-init.vim	/^  augroup gtagsupdate$/;"	a
-junk_comp	trash/junk-init.vim	/^function! s:junk_comp(lead, cmd, pos) "{{{$/;"	f
 morehighlight	color-init.vim	/^augroup morehighlight$/;"	a
-open_junk_file	trash/junk-init.vim	/^function! s:open_junk_file()$/;"	f
-open_junk_file	trash/junk-init.vim	/^function! s:open_junk_file(dir, file)$/;"	f
+s:_open_junk_file	trash/junk-init.vim	/^function! s:_open_junk_file(args) "{{{$/;"	f
+s:junk_comp	trash/junk-init.vim	/^function! s:junk_comp(lead, cmd, pos) "{{{$/;"	f
+s:my_cr_function	neocomplete-init.vim	/^function! s:my_cr_function()$/;"	f
+s:open_junk_file	trash/junk-init.vim	/^function! s:open_junk_file()$/;"	f
+s:open_junk_file	trash/junk-init.vim	/^function! s:open_junk_file(dir, file)$/;"	f
 shebangchmodx	auto-edit-init.vim	/^  augroup shebangchmodx$/;"	a
 templates	auto-edit-init.vim	/^augroup templates$/;"	a
 uname	kaoriya-init.vim	/^  let uname = system('uname')$/;"	v
+uniteescape	unite-init.vim	/^augroup uniteescape$/;"	a

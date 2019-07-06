@@ -30,9 +30,9 @@ source $CONF_VIM/move-plugin-init.vim
 source $CONF_VIM/edit-plugin-init.vim
 source $CONF_VIM/appear-plugin-init.vim
 source $CONF_VIM/internet-init.vim
-source $CONF_VIM/neocomplcache-init.vim
+source $CONF_VIM/neocomplete-init.vim
 source $CONF_VIM/unite-init.vim
-source $CONF_VIM/latex-init.vim
+" source $CONF_VIM/latex-init.vim
 
 source $CONF_VIM/test-init.vim
 
