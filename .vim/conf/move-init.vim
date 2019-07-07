@@ -36,7 +36,8 @@ set wildmode=list,full
 "" Macで使えない
 set mouse=a
 if !has('nvim')
-  set ttymouse=xterm2
+  set ttymouse=sgr
+  " set ttymouse=xterm2
 endif
 
 "---------------------------------------------------------------------------
