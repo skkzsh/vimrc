@@ -3,7 +3,7 @@
 """ GUI固有ではない画面表示の設定:
 
 """ 行番号の表示
-"set number
+set number
 """ ルーラーの表示
 set ruler
 """ 長い行を折り返して表示
