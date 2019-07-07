@@ -92,6 +92,7 @@ NeoBundle 'mattn/webapi-vim'
 " NeoBundle 'mattn/vimplenote-vim'
 if executable('git')
   NeoBundle 'tpope/vim-fugitive'
+  NeoBundle 'airblade/vim-gitgutter'
   NeoBundle 'mattn/gist-vim'
   " NeoBundle 'lambdalisue/vim-gista'
 endif
@@ -102,11 +103,16 @@ endif
 
 "" tpope
 NeoBundle 'tpope/vim-surround'
+" NeoBundle 'tpope/vim-repeat'
 
 "" Lokaltog
 NeoBundle 'Lokaltog/vim-easymotion'
 " NeoBundle 'Lokaltog/powerline'
 " NeoBundle 'Lokaltog/vim-powerline'
+
+" NeoBundle 'terryma/vim-expand-region'
+" NeoBundle 'gcmt/wildfire.vim'
+" NeoBundle 'nathanaelkane/vim-indent-guides'
 
 " NeoBundle 'bling/vim-airline'
 NeoBundle 'itchyny/lightline.vim'
@@ -118,6 +124,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundleLazy 'xoria256.vim'
 
 "" LSP
+" NeoBundle 'w0rp/ale'
 " NeoBundle 'prabirshrestha/vim-lsp'
 " NeoBundle 'prabirshrestha/async.vim'
 " NeoBundle 'prabirshrestha/asyncomplete.vim'

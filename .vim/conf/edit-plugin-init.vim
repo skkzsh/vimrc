@@ -1,6 +1,11 @@
 "" Edit Settings by Plugins
 
 "---------------------------------------------------------------------------
+" Expand region
+" map <M-k> <Plug>(expand_region_expand)
+" map <M-j> <Plug>(expand_region_shrink)
+
+"---------------------------------------------------------------------------
 " TComment
 " if !(has('mac'))
 "     let g:tcommentMapLeader1 = '<C-\>'

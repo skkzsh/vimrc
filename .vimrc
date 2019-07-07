@@ -24,6 +24,7 @@ source $CONF_VIM/ja-init.vim
 
 source $CONF_VIM/bundle-init.vim
 
+source $CONF_VIM/develop-init.vim
 source $CONF_VIM/color-init.vim
 source $CONF_VIM/plugin-init.vim
 source $CONF_VIM/move-plugin-init.vim

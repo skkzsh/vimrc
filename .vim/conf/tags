@@ -96,6 +96,7 @@ g:errormarker_warningtext	plugin-init.vim	/^let g:errormarker_warningtext = '??'
 g:gist_clip_command	internet-init.vim	/^  let g:gist_clip_command = 'pbcopy'$/;"	v
 g:gist_clip_command	internet-init.vim	/^  let g:gist_clip_command = 'xclip -selection clipboard'$/;"	v
 g:gist_detect_filetype	internet-init.vim	/^let g:gist_detect_filetype = 1$/;"	v
+g:gitgutter_map_keys	develop-init.vim	/^let g:gitgutter_map_keys = 0$/;"	v
 g:junkfile#directory	plugin-init.vim	/^let g:junkfile#directory = $HOME . '\/.junk' . strftime('\/%y')$/;"	v
 g:neocomplete#enable_at_startup	neocomplete-init.vim	/^let g:neocomplete#enable_at_startup = 1$/;"	v
 g:neocomplete#enable_smart_case	neocomplete-init.vim	/^let g:neocomplete#enable_smart_case = 1$/;"	v
@@ -105,15 +106,15 @@ g:quickrun_config	move-plugin-init.vim	/^let g:quickrun_config = {}$/;"	v
 g:ref_alc_encoding	move-plugin-init.vim	/^let g:ref_alc_encoding = 'utf-8'$/;"	v
 g:ref_source_webdict_sites	move-plugin-init.vim	/^let g:ref_source_webdict_sites = {$/;"	v
 g:ref_source_webdict_sites	move-plugin-init.vim	/^let g:ref_source_webdict_sites.default = 'e'$/;"	v
-g:syntastic_always_populate_loc_list	move-plugin-init.vim	/^let g:syntastic_always_populate_loc_list = 1$/;"	v
-g:syntastic_auto_loc_list	move-plugin-init.vim	/^let g:syntastic_auto_loc_list = 1$/;"	v
-g:syntastic_check_on_open	move-plugin-init.vim	/^let g:syntastic_check_on_open = 1$/;"	v
-g:syntastic_check_on_wq	move-plugin-init.vim	/^let g:syntastic_check_on_wq = 0$/;"	v
-g:syntastic_dockerfile_checkers	move-plugin-init.vim	/^  let g:syntastic_dockerfile_checkers = ['hadolint']$/;"	v
-g:syntastic_mode_map	move-plugin-init.vim	/^let g:syntastic_mode_map = {$/;"	v
-g:syntastic_sh_checkers	move-plugin-init.vim	/^  let g:syntastic_sh_checkers = ['shellcheck']$/;"	v
-g:syntastic_vim_checkers	move-plugin-init.vim	/^  let g:syntastic_vim_checkers = ['vint']$/;"	v
-g:syntastic_yaml_checkers	move-plugin-init.vim	/^  let g:syntastic_yaml_checkers = ['yamllint']$/;"	v
+g:syntastic_always_populate_loc_list	develop-init.vim	/^let g:syntastic_always_populate_loc_list = 1$/;"	v
+g:syntastic_auto_loc_list	develop-init.vim	/^let g:syntastic_auto_loc_list = 1$/;"	v
+g:syntastic_check_on_open	develop-init.vim	/^let g:syntastic_check_on_open = 1$/;"	v
+g:syntastic_check_on_wq	develop-init.vim	/^let g:syntastic_check_on_wq = 0$/;"	v
+g:syntastic_dockerfile_checkers	develop-init.vim	/^  let g:syntastic_dockerfile_checkers = ['hadolint']$/;"	v
+g:syntastic_mode_map	develop-init.vim	/^let g:syntastic_mode_map = {$/;"	v
+g:syntastic_sh_checkers	develop-init.vim	/^  let g:syntastic_sh_checkers = ['shellcheck']$/;"	v
+g:syntastic_vim_checkers	develop-init.vim	/^  let g:syntastic_vim_checkers = ['vint']$/;"	v
+g:syntastic_yaml_checkers	develop-init.vim	/^  let g:syntastic_yaml_checkers = ['yamllint']$/;"	v
 g:tex_flavor	latex-init.vim	/^let g:tex_flavor = 'latex'$/;"	v
 g:unite_enable_start_insert	unite-init.vim	/^let g:unite_enable_start_insert = 1$/;"	v
 g:unite_source_ack_command	unite-init.vim	/^  let g:unite_source_ack_command = 'ack'$/;"	v
@@ -131,6 +132,7 @@ g:yankring_history_file	edit-plugin-init.vim	/^let g:yankring_history_file = '.y
 g:yankring_max_history	edit-plugin-init.vim	/^let g:yankring_max_history = 50$/;"	v
 g:yankring_window_height	edit-plugin-init.vim	/^let g:yankring_window_height = 13$/;"	v
 g:zsh_bundle	bundle-init.vim	/^  let g:zsh_bundle = $HOME . '\/.zsh\/bundle'$/;"	v
+gitgutterupdate	develop-init.vim	/^augroup gitgutterupdate$/;"	a
 grlcd	auto-move-init.vim	/^augroup grlcd$/;"	a
 gtagsupdate	auto-edit-init.vim	/^  augroup gtagsupdate$/;"	a
 morehighlight	color-init.vim	/^augroup morehighlight$/;"	a
