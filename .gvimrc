@@ -112,9 +112,9 @@ endif
 
 "" Cursor
 " highlight Cursor gui=NONE guifg=NONE guibg=Yellow
-if colors_name == 'BlackSea'
-  highlight Cursor gui=NONE guifg=NONE guibg=Turquoise
-endif
+" if colors_name == 'BlackSea'
+"   highlight Cursor gui=NONE guifg=NONE guibg=Turquoise
+" endif
 
 "" Search
 "highlight Search gui=NONE guifg=NONE guibg=LightYellow
@@ -151,11 +151,21 @@ endif
 "" 行末Space
 highlight TrailingSpace gui=NONE guifg=NONE guibg=LightPink
 
+"" git gutter
+highlight GitGutterAdd    guifg=#009900 guibg=NONE
+highlight GitGutterChange guifg=#bbbb00 guibg=NONE
+highlight GitGutterDelete guifg=#ff2222 guibg=NONE
+
 "---------------------------------------------------------------------------
 " 行番号を表示
 set number
 " バーの表示
 set guioptions-=T
+
+" if has('gui_macvim')
+"   " optionをmetaとして使う
+"   set macmeta
+" endif
 
 "---------------------------------------------------------------------------
 " 日本語入力に関する設定:
